@@ -1,0 +1,272 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:danielCherrin_PomodoroTimer">
+    <!--Solid Color Brush-->
+    <SolidColorBrush x:Key="scb_BGContent" Color="#1a1a1a"/>
+    <SolidColorBrush x:Key="scb_BGPane" Color="#f1262626"/>
+    <SolidColorBrush x:Key="scb_BGbtn" Color="#00000000"/>
+    <SolidColorBrush x:Key="scb_FGbtn" Color="#f1f1f1"/>
+    <SolidColorBrush x:Key="scb_FGtxt" Color="#f1f1f1"/>
+
+    <!--LIGHT COLOR BRUSH-->
+    <!--<SolidColorBrush x:Key="scb_BGContent" Color="#f1f1f1"/>
+            <SolidColorBrush x:Key="scb_BGPane" Color="#f1f1f1f1"/>
+            <SolidColorBrush x:Key="scb_BGbtn" Color="#00000000"/>
+            <SolidColorBrush x:Key="scb_FGbtn" Color="#1a1a1a"/>
+            <SolidColorBrush x:Key="scb_FGtxt" Color="#1a1a1a"/>-->
+
+    <!--Date Template-->
+    <DataTemplate x:Key="dt_insertPresetHeader">
+        <TextBlock  Text="Create Preset Name:" Foreground="{StaticResource scb_FGtxt}"/>
+    </DataTemplate>
+
+    <!--sGrids-->
+    <Style x:Key="sty_grd_mainGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="15"/>
+    </Style>
+
+    <Style x:Key="sty_grd_settingsGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="15"/>
+    </Style>
+
+    <!--sTextblock-->
+    <Style x:Key="sty_txt_settings" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+    </Style>
+
+    <!--sTextBox-->
+    <Style x:Key="sty_txt_insertPresetName" TargetType="TextBox">
+        <Setter Property="Margin" Value="0,5,0,5"/>
+        <Setter Property="Width" Value="185"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HeaderTemplate" Value="{StaticResource dt_insertPresetHeader}"/>
+    </Style>
+
+    <!--sComboBox-->
+    <Style x:Key="sty_cmbbx_settingsTime" TargetType="ComboBox">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="0,5,0,5"/>
+        <Setter Property="Width" Value="220"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+    </Style>
+
+    <Style x:Key="sty_cmbbx_presetSettings" TargetType="ComboBox">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="0,5,0,5"/>
+        <Setter Property="Header" Value="Presets :"/>
+        <Setter Property="Width" Value="185"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+    </Style>
+
+    <!--sButton-->
+    <Style x:Key="sty_btn_presetOptions" TargetType="Button">
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+    </Style>
+
+    <!--sSplitView-->
+    <Style x:Key="sty_spltvw_main" TargetType="SplitView">
+        <Setter Property="Background" Value="{StaticResource scb_BGContent}"/>
+        <Setter Property="PaneBackground" Value="{StaticResource scb_BGPane}"/>
+        <Setter Property="IsPaneOpen" Value="False"/>
+        <Setter Property="DisplayMode" Value="Overlay"/>
+        <Setter Property="PanePlacement" Value="Right"/>
+        <Setter Property="OpenPaneLength" Value="250"/>
+    </Style>
+
+    <!--sScrollViewer-->
+    <Style x:Key="sty_scrlvw_splitViewPane" TargetType="ScrollViewer">
+        <Setter Property="HorizontalScrollMode" Value="Disabled"/>
+        <Setter Property="VerticalScrollMode" Value="Enabled"/>
+    </Style>
+
+    <!--moreThan780x550State-->
+    <!--sButton-->
+    <Style x:Key="sty_btn_toggleTheme" TargetType="Button">
+        <Setter Property="Content" Value="&#xE793;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <Style x:Key="sty_btn_sfx" TargetType="Button">
+        <Setter Property="Content" Value="&#xE995;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+
+    <Style x:Key="sty_btn_closeSettingsAsset" TargetType="Button">
+        <Setter Property="Content" Value="&#xE72A;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_btn_settingAsset" TargetType="Button">
+        <Setter Property="Content" Value="&#xE713;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_btn_refreshAsset" TargetType="Button">
+        <Setter Property="Content" Value="&#xE72C;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_btn_playAsset" TargetType="Button">
+        <Setter Property="Content" Value="&#xE768;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="64"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!--sTextblock-->
+    <Style x:Key="sty_txt_timer" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="192"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_txt_checkpointSession" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xF126;"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <Style x:Key="sty_txt_checkpointBreak" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xF126;"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="6"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <!--lessThan780x550State-->
+    <!--sButtonMini-->
+    <Style x:Key="sty_btn_toggleThemeMini" TargetType="Button">
+        <Setter Property="Content" Value="&#xE793;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <Style x:Key="sty_btn_sfxMini" TargetType="Button">
+        <Setter Property="Content" Value="&#xE995;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_btn_closeSettingsAssetMini" TargetType="Button">
+        <Setter Property="Content" Value="&#xE72A;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_btn_settingAssetMini" TargetType="Button">
+        <Setter Property="Content" Value="&#xE713;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_btn_refreshAssetMini" TargetType="Button">
+        <Setter Property="Content" Value="&#xE72C;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_btn_playAssetMini" TargetType="Button">
+        <Setter Property="Content" Value="&#xF5B0;"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGbtn}"/>
+        <Setter Property="Background" Value="{StaticResource scb_BGbtn}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!--sTextblockMini-->
+    <Style x:Key="sty_txt_timerMini" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="96"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="sty_txt_checkpointSessionMini" TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xF126;"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+        <Style x:Key="sty_txt_checkpointBreakMini" TargetType="TextBlock">
+            <Setter Property="Text" Value="&#xF126;"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Foreground" Value="{StaticResource scb_FGtxt}"/>
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+            <Setter Property="FontSize" Value="4"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+</ResourceDictionary>

@@ -1,0 +1,270 @@
+﻿<Page
+    x:Name="pg_Main"
+    x:Class="danielCherrin_PomodoroTimer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:danielCherrin_PomodoroTimer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{StaticResource scb_BGContent}">
+
+    <!--MAIN SPLITVIEW-->
+    <SplitView x:Name="spltvw_settings" Style="{StaticResource sty_spltvw_main}">
+        
+        <!--VISUAL STATE MANAGER for setting styles-->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="lessThan780x550State">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" MinWindowHeight="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="scrlvw_settings.Style" Value="{StaticResource sty_scrlvw_splitViewPane}"/>
+                        <Setter Target="grd_settingsGrid.Style" Value="{StaticResource sty_grd_settingsGrid}"/>
+                        <Setter Target="grd_mainGrid.Style" Value="{StaticResource sty_grd_mainGrid}"/>
+                        <Setter Target="cmbbx_sessionTime.Style" Value="{StaticResource sty_cmbbx_settingsTime}"/>
+                        <Setter Target="cmbbx_shortTime.Style" Value="{StaticResource sty_cmbbx_settingsTime}"/>
+                        <Setter Target="cmbbx_longTime.Style" Value="{StaticResource sty_cmbbx_settingsTime}"/>
+                        <Setter Target="cmbbx_presetSettings.Style" Value="{StaticResource sty_cmbbx_presetSettings}"/>
+                        <Setter Target="btn_deletePreset.Style" Value="{StaticResource sty_btn_presetOptions}"/>
+                        <Setter Target="btn_insertPresetName.Style" Value="{StaticResource sty_btn_presetOptions}"/>
+                        <Setter Target="txt_insertPresetName.Style" Value="{StaticResource sty_txt_insertPresetName}"/>
+                        <Setter Target="btn_toggleTheme.Style" Value="{StaticResource sty_btn_toggleThemeMini}"/>
+                        <Setter Target="btn_sfx.Style" Value="{StaticResource sty_btn_sfxMini}"/>
+                        <Setter Target="btn_settings.Style" Value="{StaticResource sty_btn_settingAssetMini}"/>
+                        <Setter Target="btn_closeSettings.Style" Value="{StaticResource sty_btn_closeSettingsAssetMini}"/>
+                        <Setter Target="btn_refresh.Style" Value="{StaticResource sty_btn_refreshAssetMini}"/>
+                        <Setter Target="btn_toggleTimer.Style" Value="{StaticResource sty_btn_playAssetMini}"/>
+                        <Setter Target="txt_insertPresetName.Style" Value="{StaticResource sty_txt_insertPresetName}"/>
+                        <Setter Target="txt_timer.Style" Value="{StaticResource sty_txt_timerMini}"/>
+                        <Setter Target="txt_checkpointSession00.Style" Value="{StaticResource sty_txt_checkpointSessionMini}"/>
+                        <Setter Target="txt_checkpointSession01.Style" Value="{StaticResource sty_txt_checkpointSessionMini}"/>
+                        <Setter Target="txt_checkpointSession02.Style" Value="{StaticResource sty_txt_checkpointSessionMini}"/>
+                        <Setter Target="txt_checkpointSession03.Style" Value="{StaticResource sty_txt_checkpointSessionMini}"/>
+                        <Setter Target="txt_checkpointBreak00.Style" Value="{StaticResource sty_txt_checkpointBreakMini}"/>
+                        <Setter Target="txt_checkpointBreak01.Style" Value="{StaticResource sty_txt_checkpointBreakMini}"/>
+                        <Setter Target="txt_checkpointBreak02.Style" Value="{StaticResource sty_txt_checkpointBreakMini}"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="moreThan780x550State">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="780" MinWindowHeight="550"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="scrlvw_settings.Style" Value="{StaticResource sty_scrlvw_splitViewPane}"/>
+                        <Setter Target="grd_settingsGrid.Style" Value="{StaticResource sty_grd_settingsGrid}"/>
+                        <Setter Target="grd_mainGrid.Style" Value="{StaticResource sty_grd_mainGrid}"/>
+                        <Setter Target="cmbbx_sessionTime.Style" Value="{StaticResource sty_cmbbx_settingsTime}"/>
+                        <Setter Target="cmbbx_shortTime.Style" Value="{StaticResource sty_cmbbx_settingsTime}"/>
+                        <Setter Target="cmbbx_longTime.Style" Value="{StaticResource sty_cmbbx_settingsTime}"/>
+                        <Setter Target="cmbbx_presetSettings.Style" Value="{StaticResource sty_cmbbx_presetSettings}"/>
+                        <Setter Target="btn_deletePreset.Style" Value="{StaticResource sty_btn_presetOptions}"/>
+                        <Setter Target="btn_insertPresetName.Style" Value="{StaticResource sty_btn_presetOptions}"/>
+                        <Setter Target="btn_toggleTheme.Style" Value="{StaticResource sty_btn_toggleTheme}"/>
+                        <Setter Target="btn_sfx.Style" Value="{StaticResource sty_btn_sfx}"/>
+                        <Setter Target="btn_settings.Style" Value="{StaticResource sty_btn_settingAsset}"/>
+                        <Setter Target="btn_closeSettings.Style" Value="{StaticResource sty_btn_closeSettingsAsset}"/>
+                        <Setter Target="btn_refresh.Style" Value="{StaticResource sty_btn_refreshAsset}"/>
+                        <Setter Target="btn_toggleTimer.Style" Value="{StaticResource sty_btn_playAsset}"/>
+                        <Setter Target="txt_insertPresetName.Style" Value="{StaticResource sty_txt_insertPresetName}"/>
+                        <Setter Target="txt_timer.Style" Value="{StaticResource sty_txt_timer}"/>
+                        <Setter Target="txt_checkpointSession00.Style" Value="{StaticResource sty_txt_checkpointSession}"/>
+                        <Setter Target="txt_checkpointSession01.Style" Value="{StaticResource sty_txt_checkpointSession}"/>
+                        <Setter Target="txt_checkpointSession02.Style" Value="{StaticResource sty_txt_checkpointSession}"/>
+                        <Setter Target="txt_checkpointSession03.Style" Value="{StaticResource sty_txt_checkpointSession}"/>
+                        <Setter Target="txt_checkpointBreak00.Style" Value="{StaticResource sty_txt_checkpointBreak}"/>
+                        <Setter Target="txt_checkpointBreak01.Style" Value="{StaticResource sty_txt_checkpointBreak}"/>
+                        <Setter Target="txt_checkpointBreak02.Style" Value="{StaticResource sty_txt_checkpointBreak}"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <!--SETTINGS PANE-->
+        <SplitView.Pane>
+            <ScrollViewer x:Name="scrlvw_settings">
+                <Grid x:Name="grd_settingsGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <!--BUFFER ROW DEFINITION-->
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--SETTINGS PANE CONTENT-->
+                    <Button x:Name="btn_closeSettings" 
+                            Tapped="btn_settings_Tapped"
+                            Grid.Row="0" 
+                            HorizontalAlignment="Right"/>
+
+                    <!--SESSION TIME BOX-->
+                    <ComboBox x:Name="cmbbx_sessionTime"
+                              ItemsSource="{x:Bind timeSettingRange}"
+                              Header="Session Time (MINUTES)" 
+                              Grid.Row="1"
+                              SelectionChanged="cmbbx_sessionTime_SelectionChanged"/>
+
+                    <!--SHORT BREAK TIME BOX-->
+                    <ComboBox x:Name="cmbbx_shortTime"
+                              ItemsSource="{x:Bind timeSettingRange}" 
+                              Header="Short Break Time (MINUTES)" 
+                              Grid.Row="2"
+                              SelectionChanged="cmbbx_shortTime_SelectionChanged"/>
+
+                    <!--LONG BREAK TIME BOX-->
+                    <ComboBox x:Name="cmbbx_longTime"
+                              ItemsSource="{x:Bind timeSettingRange}" 
+                              Header="Long Break Time (MINUTES)" Grid.Row="3"
+                              SelectionChanged="cmbbx_longTime_SelectionChanged"/>
+
+                     <!--INSERT PRESET NAME-->
+                    <RelativePanel Grid.Row="5" 
+                                   Margin="0,5,0,0">
+                        
+                        <TextBox x:Name="txt_insertPresetName"/>
+                        <Button x:Name="btn_insertPresetName" 
+                                Content="&#xE74E;"
+                                RelativePanel.RightOf="txt_insertPresetName" 
+                                RelativePanel.AlignBottomWith="txt_insertPresetName"
+                                Tapped="btn_insertPresetName_Tapped"/>
+                        
+                    </RelativePanel>
+
+                    <!--SELECT/LOAD/DELETE PRESET NAME-->
+                    <RelativePanel Grid.Row="6" 
+                                   Margin="0,5,0,0">
+                        
+                        <ComboBox x:Name="cmbbx_presetSettings"
+                            ItemsSource="{x:Bind presetList}"
+                            SelectionChanged="cmbbx_presetSettings_SelectionChanged"/>
+
+                        <Button x:Name="btn_deletePreset" 
+                                Content="&#xE74D;"
+                                RelativePanel.RightOf="cmbbx_presetSettings" 
+                                RelativePanel.AlignBottomWithPanel="True"
+                                Tapped="btn_deletePreset_Tapped"/>
+                    </RelativePanel>
+                </Grid>
+            </ScrollViewer>
+        </SplitView.Pane>
+
+        <!--MAIN PAGE CONTENT-->
+        <SplitView.Content>
+            <Grid x:Name="grd_mainGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--SETTINGS-->
+                <Button x:Name="btn_settings"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Tapped="btn_settings_Tapped"/>
+                <!--REFRESH-->
+                <Button x:Name="btn_refresh"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Tapped="btn_refresh_Tapped"/>
+                
+                <!--THEME BUTTON-->
+                <Button x:Name="btn_toggleTheme"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Tapped="btn_toggleTheme_Tapped"/>
+
+                <!--SOUND FX-->
+                <Button x:Name="btn_sfx"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Tapped="btn_sfx_Tapped"/>
+
+                <!--TIMER PANEL-->
+                <RelativePanel Grid.Row="1" 
+                               Grid.Column="1" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
+                    <!--TIMER-->
+                    <TextBlock x:Name="txt_timer" 
+                               Text="--:--"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                    <!--PLAY/STOP BUTTON-->
+                    <Button x:Name="btn_toggleTimer"
+                            RelativePanel.Below="txt_timer" 
+                            RelativePanel.AlignHorizontalCenterWith="txt_timer"
+                            Tapped="btn_toggleTimer_Tapped"/>
+                    <!--CHECKPOINTS-->
+
+                    <Grid x:Name="grd_checkpoint" 
+                          RelativePanel.Below="btn_toggleTimer" 
+                          RelativePanel.AlignHorizontalCenterWith="btn_toggleTimer" 
+                          Margin="0,15,0,0" Tapped="grd_checkpoint_Tapped" 
+                          PointerEntered="grd_checkpoint_PointerEntered"
+                          PointerExited="grd_checkpoint_PointerExited">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <!--CHECKPOINTS|SESSION-->
+                        <TextBlock x:Name="txt_checkpointSession00" 
+                                   Grid.Column="0"
+                                   Grid.Row="0"/>
+                        <TextBlock x:Name="txt_checkpointSession01"
+                                   Grid.Column="2"
+                                   Grid.Row="0"/>
+                        <TextBlock x:Name="txt_checkpointSession02"
+                                   Grid.Column="4"
+                                   Grid.Row="0"/>
+                        <TextBlock x:Name="txt_checkpointSession03"
+                                   Grid.Column="6"
+                                   Grid.Row="0"/>
+                        <!--CHECKPOINTS|BREAK-->
+                        <TextBlock x:Name="txt_checkpointBreak00"
+                                   Grid.Column="1"
+                                   Grid.Row="1"/>
+                        <TextBlock x:Name="txt_checkpointBreak01"
+                                   Grid.Column="3"
+                                   Grid.Row="1"/>
+                        <TextBlock x:Name="txt_checkpointBreak02"
+                                   Grid.Column="5"
+                                   Grid.Row="1"/>
+                    </Grid>
+                </RelativePanel>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
+</Page>
